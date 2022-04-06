@@ -1,0 +1,47 @@
+{
+    "manifestVersion": 1,
+    "id": "ispw-ui-extension",
+    "publisher": "JalajPublisher",
+    "version": "1.0.0",
+    "name": "ISPW UI Extension",
+    "description": "ISPW Enhancing Azure UI Extension",
+    "public":true,
+    "categories": ["Azure Pipelines"],
+	"icons": {
+        "default": "images/bmc-icon.png"        
+    },
+    "content": {
+		"details": {
+			"path": "overview.md"
+		}
+    },
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "ispw-downloader-hub",
+            "type": "ms.vss-web.hub",
+            "targets": [
+                "ms.vss-build-web.build-release-hub-group"
+            ],
+            "properties": {
+                "name": "ISPW Source Code Downloader",
+                "uri": "ispw-downloader-configuration.html"
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "ispw-downloader-configuration.html",
+            "addressable": true
+        },
+        {
+            "path": "node_modules/vss-web-extension-sdk/lib",
+            "addressable": true,
+            "packagePath": "lib"
+        }
+    ]
+}

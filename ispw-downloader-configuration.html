@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<script src="lib/VSS.SDK.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISPW Source Code Downloader</title>
+	<script src="lib/VSS.SDK.min.js"></script>
+    <script type="text/javascript">
+        VSS.init();
+        VSS.ready(function() {
+            document.getElementById("name").innerText = VSS.getWebContext().user.name;
+        });
+	</script>
+</head>
+<body>
+    <h2 align="center">Configuration</h2>
+    <table cellpadding="10" cellspacing="2" align="center">
+        <tr>
+            <td class="col1">Topaz Workbench CLI home location</td>
+            <td class="col2"><input type="text" name="Topaz Workbench CLI home location" id="CLILocation"></td>
+        </tr>
+		
+        <tr>
+            <td class="col1">Source Download Location</td>
+            <td class="col2"><input type="text" name="Source Download Location" id="sourceDownloadLocation"></td>
+        </tr>
+		
+        <tr>
+            <td class="col1">Container Type</td>
+            <td class="col2">
+                <select name="container" id="containerType">
+                    <option value="Assignment">Assignment</option>
+                    <option value="Release">Release</option>
+                    <option value="Set">Set</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="col1">Container Id</td>
+            <td class="col2"><input type="text" name="Container Id" id="containerId"></td>
+        </tr>
+	
+        <tr>
+            <td class="col1">Component Type</td>
+            <td class="col2"><input type="text" name="Component Type" id="componentType"></td>
+        </tr>
+
+        <tr colspan="2" align="center">
+            <td>
+                <button type="submit" class="submit1"  onclick="submitProjectDetails()">Save</button>
+            </td>
+            <td>
+                <button type="reset" class="reset1" onclick="resetProjectDetails()">Clear</button>
+            </td>
+        </tr>
+    </table>
+    <script src="project.js"></script>
+</body>
+
+</html>
